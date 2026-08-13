@@ -1,0 +1,46 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Node & Frontend
+node_modules/
+frontend/node_modules/
+frontend/.tanstack/
+frontend/dist/
+frontend/build/
+.tanstack/
+dist/
+build/
+.cache/
+
+# Application Runtime Caches & Downloads
+cloned_repos/
+index_state.json
+*.log
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary & Archive files
+*.zip
+*.tar.gz
+*.tmp

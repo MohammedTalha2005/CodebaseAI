@@ -1,0 +1,311 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import "@xyflow/react/dist/style.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Codebase AI Engineer — enterprise dark design system.
+ * Deep charcoal surfaces, restrained cyan/blue accent, thin borders.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 3px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-elevated: var(--elevated);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-muted: var(--primary-muted);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-panel: 0 1px 2px oklch(0 0 0 / 0.4), 0 8px 24px -12px oklch(0 0 0 / 0.6);
+  --shadow-float: 0 24px 60px -20px oklch(0 0 0 / 0.75);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --background: oklch(0.168 0.008 258);
+  --foreground: oklch(0.965 0.004 250);
+
+  --card: oklch(0.203 0.009 258);
+  --card-foreground: oklch(0.965 0.004 250);
+  --elevated: oklch(0.234 0.010 258);
+
+  --popover: oklch(0.203 0.009 258);
+  --popover-foreground: oklch(0.965 0.004 250);
+
+  --primary: oklch(0.708 0.128 226);
+  --primary-foreground: oklch(0.17 0.02 250);
+  --primary-muted: oklch(0.708 0.128 226 / 0.12);
+
+  --secondary: oklch(0.246 0.010 258);
+  --secondary-foreground: oklch(0.93 0.006 250);
+
+  --muted: oklch(0.238 0.009 258);
+  --muted-foreground: oklch(0.672 0.014 256);
+
+  --accent: oklch(0.262 0.012 258);
+  --accent-foreground: oklch(0.965 0.004 250);
+
+  --destructive: oklch(0.62 0.198 22);
+  --destructive-foreground: oklch(0.98 0.004 250);
+
+  --success: oklch(0.72 0.148 158);
+  --warning: oklch(0.79 0.148 76);
+  --info: oklch(0.708 0.128 226);
+
+  --border: oklch(1 0 0 / 0.08);
+  --border-strong: oklch(1 0 0 / 0.14);
+  --input: oklch(1 0 0 / 0.12);
+  --ring: oklch(0.708 0.128 226 / 0.55);
+
+  --chart-1: oklch(0.708 0.128 226);
+  --chart-2: oklch(0.72 0.148 158);
+  --chart-3: oklch(0.79 0.148 76);
+  --chart-4: oklch(0.66 0.13 275);
+  --chart-5: oklch(0.672 0.014 256);
+
+  --sidebar: oklch(0.182 0.008 258);
+  --sidebar-foreground: oklch(0.93 0.006 250);
+  --sidebar-primary: oklch(0.708 0.128 226);
+  --sidebar-primary-foreground: oklch(0.17 0.02 250);
+  --sidebar-accent: oklch(0.246 0.010 258);
+  --sidebar-accent-foreground: oklch(0.965 0.004 250);
+  --sidebar-border: oklch(1 0 0 / 0.08);
+  --sidebar-ring: oklch(0.708 0.128 226 / 0.55);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv11", "ss01";
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(1 0 0 / 0.12);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(1 0 0 / 0.2);
+  }
+}
+
+/* Thin-bordered enterprise panel */
+@utility panel {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+}
+
+@utility panel-hover {
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    transform 0.18s ease;
+  &:hover {
+    border-color: var(--color-border-strong);
+    background-color: var(--color-elevated);
+  }
+}
+
+/* Very subtle top-lit gradient for hero surfaces */
+@utility surface-gradient {
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-primary) 7%, var(--color-card)) 0%,
+    var(--color-card) 60%
+  );
+}
+
+@utility grid-backdrop {
+  background-image:
+    linear-gradient(to right, oklch(1 0 0 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@utility text-code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+/* Markdown rendering for AI answers */
+@utility prose-answer {
+  color: var(--color-foreground);
+  font-size: 0.9rem;
+  line-height: 1.75;
+
+  & h1,
+  & h2,
+  & h3,
+  & h4 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-top: 1.35em;
+    margin-bottom: 0.5em;
+    color: var(--color-foreground);
+  }
+  & h1 {
+    font-size: 1.15rem;
+  }
+  & h2 {
+    font-size: 1.05rem;
+  }
+  & h3 {
+    font-size: 0.975rem;
+  }
+  & p {
+    margin-bottom: 0.85em;
+    color: color-mix(in oklab, var(--color-foreground) 88%, transparent);
+  }
+  & ul,
+  & ol {
+    margin: 0 0 0.85em 1.15em;
+    color: color-mix(in oklab, var(--color-foreground) 88%, transparent);
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & li {
+    margin-bottom: 0.3em;
+  }
+  & a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  & strong {
+    font-weight: 600;
+    color: var(--color-foreground);
+  }
+  & blockquote {
+    border-left: 2px solid var(--color-border-strong);
+    padding-left: 0.9em;
+    color: var(--color-muted-foreground);
+    margin-bottom: 0.85em;
+  }
+  & code {
+    font-family: var(--font-mono);
+    font-size: 0.82em;
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+    color: color-mix(in oklab, var(--color-primary) 80%, var(--color-foreground));
+  }
+  & pre {
+    background: color-mix(in oklab, var(--color-background) 70%, black);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1rem;
+    overflow-x: auto;
+    margin: 0.9em 0;
+  }
+  & pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: color-mix(in oklab, var(--color-foreground) 92%, transparent);
+    font-size: 0.8rem;
+  }
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.9em 0;
+    font-size: 0.85rem;
+  }
+  & th,
+  & td {
+    border: 1px solid var(--color-border);
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+  }
+  & th {
+    background: var(--color-secondary);
+  }
+}
+
+/* React Flow theming */
+.react-flow {
+  --xy-background-color: transparent;
+  --xy-edge-stroke-default: oklch(1 0 0 / 0.18);
+  --xy-edge-stroke-selected-default: var(--color-primary);
+}
+.react-flow__attribution {
+  display: none;
+}
+.react-flow__controls-button {
+  background: var(--color-card);
+  border-color: var(--color-border);
+  color: var(--color-foreground);
+  fill: currentColor;
+}
+.react-flow__controls-button:hover {
+  background: var(--color-elevated);
+}

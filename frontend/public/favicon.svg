@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="primary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bg)" stroke="#1e293b" stroke-width="2"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="url(#accent)" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Code Bracket > -->
+  <path d="M18 22L30 32L18 42" stroke="url(#primary)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Underline / Cursor _ -->
+  <path d="M34 42H46" stroke="url(#primary)" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- AI Sparkle Node -->
+  <circle cx="44" cy="22" r="3.5" fill="#38bdf8"/>
+  <path d="M44 14V17M44 27V30M36 22H39M49 22H52" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+</svg>

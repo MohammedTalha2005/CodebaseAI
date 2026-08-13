@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+pinecone
+google-generativeai
+google-genai
+openai
+groq
+python-dotenv
+pydantic
+gitpython
+langchain
+langchain-community
+langchain-pinecone
+langchain-openai
+sentence-transformers
+typer
+rich
