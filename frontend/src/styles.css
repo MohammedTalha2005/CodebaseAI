@@ -6,9 +6,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Codebase AI Engineer — enterprise dark design system.
- * Deep charcoal surfaces, restrained cyan/blue accent, thin borders.
- * All colors are oklch semantic tokens. Never hardcode colors in components.
+ * Codebase AI Engineer — Polished Near-Black AI Product Theme.
+ * Inspired by ultra-refined AI workspace designs.
  */
 
 @theme inline {
@@ -18,7 +17,7 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   --color-background: var(--background);
@@ -60,62 +59,88 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --shadow-panel: 0 1px 2px oklch(0 0 0 / 0.4), 0 8px 24px -12px oklch(0 0 0 / 0.6);
-  --shadow-float: 0 24px 60px -20px oklch(0 0 0 / 0.75);
+  --shadow-panel: 0 2px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+  --shadow-float: 0 24px 60px -20px rgba(0,0,0,0.85);
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.75rem;
 
-  --background: oklch(0.168 0.008 258);
-  --foreground: oklch(0.965 0.004 250);
+  --bg: #0c0c0c;
+  --box: #111111;
+  --hairline: rgba(255,255,255,0.065);
+  --heading: #fafafa;
+  --subtitle: #9e9e9e;
+  --nav: #bcbcbc;
+  --placeholder: #aeaeae;
+  --chip-fill: rgba(255,255,255,0.028);
+  --chip-border: rgba(255,255,255,0.30);
+  --chip-edge: linear-gradient(135deg,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,0.94) 22%,
+    rgba(255,255,255,0.44) 38%,
+    rgba(255,255,255,0.28) 50%,
+    rgba(255,255,255,0.11) 63%,
+    rgba(255,255,255,0.04) 75%,
+    rgba(255,255,255,0.02) 100%);
+  --icon: #e8e8e8;
+  --mic: #e1e1e1;
+  --strip: #5c5c5c;
+  --grad: linear-gradient(90deg,
+    rgba(255,232,120,0) 0%, #ffe776 6%, #ffd400 26%, #ffd000 42%,
+    #c9c93c 60%, #86ca8a 74%, #78d0cd 88%, rgba(120,208,205,0.55) 100%);
+  --grad-solid: linear-gradient(90deg,
+    #ffe776 0%, #ffd400 22%, #ffd000 40%, #c9c93c 60%, #86ca8a 76%, #78d0cd 100%);
 
-  --card: oklch(0.203 0.009 258);
-  --card-foreground: oklch(0.965 0.004 250);
-  --elevated: oklch(0.234 0.010 258);
+  --background: #0c0c0c;
+  --foreground: #fafafa;
 
-  --popover: oklch(0.203 0.009 258);
-  --popover-foreground: oklch(0.965 0.004 250);
+  --card: #111111;
+  --card-foreground: #fafafa;
+  --elevated: #161616;
 
-  --primary: oklch(0.708 0.128 226);
-  --primary-foreground: oklch(0.17 0.02 250);
-  --primary-muted: oklch(0.708 0.128 226 / 0.12);
+  --popover: #111111;
+  --popover-foreground: #fafafa;
 
-  --secondary: oklch(0.246 0.010 258);
-  --secondary-foreground: oklch(0.93 0.006 250);
+  --primary: #ffd400;
+  --primary-foreground: #0c0c0c;
+  --primary-muted: rgba(255, 212, 0, 0.12);
 
-  --muted: oklch(0.238 0.009 258);
-  --muted-foreground: oklch(0.672 0.014 256);
+  --secondary: #1a1a1a;
+  --secondary-foreground: #efefef;
 
-  --accent: oklch(0.262 0.012 258);
-  --accent-foreground: oklch(0.965 0.004 250);
+  --muted: #181818;
+  --muted-foreground: #9e9e9e;
 
-  --destructive: oklch(0.62 0.198 22);
-  --destructive-foreground: oklch(0.98 0.004 250);
+  --accent: #222222;
+  --accent-foreground: #ffffff;
 
-  --success: oklch(0.72 0.148 158);
-  --warning: oklch(0.79 0.148 76);
-  --info: oklch(0.708 0.128 226);
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
 
-  --border: oklch(1 0 0 / 0.08);
-  --border-strong: oklch(1 0 0 / 0.14);
-  --input: oklch(1 0 0 / 0.12);
-  --ring: oklch(0.708 0.128 226 / 0.55);
+  --success: #23d92c;
+  --warning: #ffe776;
+  --info: #78d0cd;
 
-  --chart-1: oklch(0.708 0.128 226);
-  --chart-2: oklch(0.72 0.148 158);
-  --chart-3: oklch(0.79 0.148 76);
-  --chart-4: oklch(0.66 0.13 275);
-  --chart-5: oklch(0.672 0.014 256);
+  --border: rgba(255, 255, 255, 0.065);
+  --border-strong: rgba(255, 255, 255, 0.15);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: rgba(255, 212, 0, 0.5);
 
-  --sidebar: oklch(0.182 0.008 258);
-  --sidebar-foreground: oklch(0.93 0.006 250);
-  --sidebar-primary: oklch(0.708 0.128 226);
-  --sidebar-primary-foreground: oklch(0.17 0.02 250);
-  --sidebar-accent: oklch(0.246 0.010 258);
-  --sidebar-accent-foreground: oklch(0.965 0.004 250);
-  --sidebar-border: oklch(1 0 0 / 0.08);
-  --sidebar-ring: oklch(0.708 0.128 226 / 0.55);
+  --chart-1: #ffd400;
+  --chart-2: #23d92c;
+  --chart-3: #78d0cd;
+  --chart-4: #c9c93c;
+  --chart-5: #9e9e9e;
+
+  --sidebar: #090909;
+  --sidebar-foreground: #bcbcbc;
+  --sidebar-primary: #ffd400;
+  --sidebar-primary-foreground: #0c0c0c;
+  --sidebar-accent: #141414;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.065);
+  --sidebar-ring: rgba(255, 212, 0, 0.5);
 }
 
 @layer base {
@@ -125,11 +150,15 @@
 
   html {
     color-scheme: dark;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: #0c0c0c;
+    color: #fafafa;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "cv11", "ss01";
@@ -137,53 +166,51 @@
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: oklch(1 0 0 / 0.12);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(1 0 0 / 0.2);
+    background: rgba(255, 255, 255, 0.22);
   }
 }
 
-/* Thin-bordered enterprise panel */
+/* Thin-bordered AI workspace panel */
 @utility panel {
-  background-color: var(--color-card);
-  border: 1px solid var(--color-border);
+  background-color: #111111;
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.028), rgba(255,255,255,0) 42%);
+  border: 1px solid rgba(255,255,255,0.065);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-panel);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 @utility panel-hover {
-  transition:
-    border-color 0.18s ease,
-    background-color 0.18s ease,
-    transform 0.18s ease;
+  transition: border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease;
   &:hover {
-    border-color: var(--color-border-strong);
-    background-color: var(--color-elevated);
+    border-color: rgba(255, 255, 255, 0.16);
+    background-color: #151515;
   }
 }
 
-/* Very subtle top-lit gradient for hero surfaces */
+/* Multi-layer AI Gradient surface */
 @utility surface-gradient {
-  background-image: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--color-primary) 7%, var(--color-card)) 0%,
-    var(--color-card) 60%
-  );
+  background:
+    radial-gradient(120% 150% at 9% 52%, rgba(210,174,26,0.18) 0%, rgba(191,159,40,0.08) 22%, transparent 56%),
+    radial-gradient(120% 150% at 95% 50%, rgba(100,163,162,0.18) 0%, rgba(77,148,148,0.08) 34%, transparent 64%),
+    linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%),
+    #111111;
 }
 
 @utility grid-backdrop {
   background-image:
-    linear-gradient(to right, oklch(1 0 0 / 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -192,11 +219,35 @@
   font-size: 0.8125rem;
 }
 
+/* Chip button system utility */
+@utility chip-btn {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.028);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+/* Green dot status indicator with radial glow */
+.status-dot-glowing {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #23d92c;
+  box-shadow: 0 0 6px rgba(45, 220, 55, 0.65);
+}
+
 /* Markdown rendering for AI answers */
 @utility prose-answer {
-  color: var(--color-foreground);
+  color: #efefef;
   font-size: 0.9rem;
-  line-height: 1.75;
+  line-height: 1.65;
 
   & h1,
   & h2,
@@ -204,9 +255,9 @@
   & h4 {
     font-weight: 600;
     letter-spacing: -0.01em;
-    margin-top: 1.35em;
-    margin-bottom: 0.5em;
-    color: var(--color-foreground);
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+    color: #ffffff;
   }
   & h1 {
     font-size: 1.15rem;
@@ -219,12 +270,12 @@
   }
   & p {
     margin-bottom: 0.85em;
-    color: color-mix(in oklab, var(--color-foreground) 88%, transparent);
+    color: #d1d1d6;
   }
   & ul,
   & ol {
     margin: 0 0 0.85em 1.15em;
-    color: color-mix(in oklab, var(--color-foreground) 88%, transparent);
+    color: #d1d1d6;
   }
   & ul {
     list-style: disc;
@@ -236,32 +287,32 @@
     margin-bottom: 0.3em;
   }
   & a {
-    color: var(--color-primary);
+    color: #ffd400;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
   & strong {
     font-weight: 600;
-    color: var(--color-foreground);
+    color: #ffffff;
   }
   & blockquote {
-    border-left: 2px solid var(--color-border-strong);
+    border-left: 2px solid var(--grad-solid);
     padding-left: 0.9em;
-    color: var(--color-muted-foreground);
+    color: #9e9e9e;
     margin-bottom: 0.85em;
   }
   & code {
     font-family: var(--font-mono);
     font-size: 0.82em;
-    background: var(--color-secondary);
-    border: 1px solid var(--color-border);
+    background: #1c1c1c;
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 4px;
     padding: 0.1em 0.35em;
-    color: color-mix(in oklab, var(--color-primary) 80%, var(--color-foreground));
+    color: #ffe776;
   }
   & pre {
-    background: color-mix(in oklab, var(--color-background) 70%, black);
-    border: 1px solid var(--color-border);
+    background: #080808;
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius-md);
     padding: 0.9rem 1rem;
     overflow-x: auto;
@@ -271,7 +322,7 @@
     background: transparent;
     border: none;
     padding: 0;
-    color: color-mix(in oklab, var(--color-foreground) 92%, transparent);
+    color: #efefef;
     font-size: 0.8rem;
   }
   & table {
@@ -282,30 +333,30 @@
   }
   & th,
   & td {
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(255,255,255,0.08);
     padding: 0.45rem 0.6rem;
     text-align: left;
   }
   & th {
-    background: var(--color-secondary);
+    background: #161616;
   }
 }
 
 /* React Flow theming */
 .react-flow {
   --xy-background-color: transparent;
-  --xy-edge-stroke-default: oklch(1 0 0 / 0.18);
-  --xy-edge-stroke-selected-default: var(--color-primary);
+  --xy-edge-stroke-default: rgba(255, 255, 255, 0.18);
+  --xy-edge-stroke-selected-default: #ffd400;
 }
 .react-flow__attribution {
   display: none;
 }
 .react-flow__controls-button {
-  background: var(--color-card);
-  border-color: var(--color-border);
-  color: var(--color-foreground);
+  background: #111111;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
   fill: currentColor;
 }
 .react-flow__controls-button:hover {
-  background: var(--color-elevated);
+  background: #1a1a1a;
 }

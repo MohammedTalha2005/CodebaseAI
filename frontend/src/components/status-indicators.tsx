@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 export type Health = "healthy" | "warning" | "offline" | "unknown";
 
 const dotStyles: Record<Health, string> = {
-  healthy: "bg-success",
+  healthy: "bg-success shadow-[0_0_6px_rgba(45,220,55,0.65)]",
   warning: "bg-warning",
   offline: "bg-destructive",
   unknown: "bg-muted-foreground",
@@ -13,7 +13,7 @@ export function StatusDot({ health, className }: { health: Health; className?: s
   return (
     <span className={cn("relative flex h-2 w-2 shrink-0", className)}>
       {health === "healthy" && (
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-50" />
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-40" />
       )}
       <span className={cn("relative inline-flex h-2 w-2 rounded-full", dotStyles[health])} />
     </span>
