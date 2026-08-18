@@ -19,17 +19,12 @@ Key benefits:
 
 ## 🖼️ User Interface
 
-### 📊 Repository Overview & Status
-![Repository Overview Dashboard](docs/images/overview.png)
-
-### 🤖 AI Code Assistant (RAG Chatbot)
-![AI Code Assistant](docs/images/assistant.png)
-
-### 🔍 Semantic Code Search
-![Semantic Code Search](docs/images/search.png)
-
-### 📁 Repository Explorer
-![Repository Explorer](docs/images/explorer.png)
+The web interface includes:
+- 📊 **Repository Overview & Status**: Live health check monitors, vector count, and indexing progress.
+- 🤖 **AI Code Assistant (RAG Chatbot)**: Interactive chat grounded in exact repository file snippets.
+- 🔍 **Semantic Code Search**: Natural language search across code logic with relevance scores and symbol citations.
+- 📁 **Repository Explorer**: Live file tree navigation and code viewer.
+- 🕸️ **Dependency Graph**: Visual module dependency structure.
 
 ---
 
