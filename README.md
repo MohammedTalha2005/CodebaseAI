@@ -1,7 +1,7 @@
 # ⚡ Codebase AI Engineer
 
 > **AI-Powered Repository Intelligence & Code Understanding Engine**  
-> Perform semantic code search, RAG-grounded Q&A, and interactive dependency graph visualization for any codebase.
+> Perform semantic code search and RAG-grounded Q&A for any codebase.
 
 ---
 
@@ -13,7 +13,6 @@ Key benefits:
 - 🚀 **Onboard Faster**: Quickly understand unfamiliar codebases and legacy projects.
 - 🔍 **Semantic Code Search**: Find logic by intent and behavior, not just string matching.
 - 🧠 **Context-Aware AI Assistant**: Ask questions grounded directly in exact file snippets and AST symbols.
-- 🕸️ **Dependency Visualization**: Map out package imports, class inheritance, and file relationships visually.
 
 ---
 
@@ -24,7 +23,6 @@ The web interface includes:
 - 🤖 **AI Code Assistant (RAG Chatbot)**: Interactive chat grounded in exact repository file snippets.
 - 🔍 **Semantic Code Search**: Natural language search across code logic with relevance scores and symbol citations.
 - 📁 **Repository Explorer**: Live file tree navigation and code viewer.
-- 🕸️ **Dependency Graph**: Visual module dependency structure.
 
 ---
 
@@ -32,7 +30,6 @@ The web interface includes:
 
 - **⚡ Semantic Vector Search**: Powered by Pinecone vector storage and dense code embeddings. Search code by intent and concept (e.g. *"where do we handle errors?"*), finding relevant logic even if exact keywords aren't in function names.
 - **🌳 AST-Aware Code Chunker**: Intelligently parses Python functions, classes, and code blocks rather than arbitrary text splits.
-- **🕸️ Interactive Dependency Graph**: Generates structural module dependency graphs using NetworkX.
 - **🎨 Modern Dark Dashboard**: High-performance UI built with React, TypeScript, Vite, and Tailwind CSS.
 - **📁 File Explorer & Status Monitor**: Live indexing stats, health check monitors, and direct file tree navigation.
 
